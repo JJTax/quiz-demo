@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJ EDU</title>
+    <link href="./static/img/logo-sq.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" href="./static/widget.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#662BF3">
+    <!--
+
+      ||    ||      
+      ||    ||  []
+      ||||||||     
+      ||    ||  || 
+      ||    ||  || 
+
+      Welcome to the club.
+
+    -->
+    <style>
+        html {
+            scroll-behavior: smooth !important;
+        }
+
+        .head-input {
+            width: 15rem;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .navbar-dropdown a.navbar-item {
+                padding-right: 0rem;
+            }
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 800;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 800;
+        }
+
+        .unify {
+            max-width: 1536px;
+            padding: 0rem 5rem;
+            flex-grow: 1;
+            margin: 0 auto;
+            position: relative;
+            width: auto;
+        }
+
+        .unify-nav {
+            padding: 0rem 5rem;
+            flex-grow: 1;
+            margin: 0 auto;
+            position: relative;
+            width: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .unify {
+                padding: 0rem 0.75rem !important;
+            }
+
+            .unify-nav {
+                padding: 0rem;
+            }
+
+            .fc-widget-open {
+                position: static !important;
+            }
+        }
+
+        .border {
+            background: #e7e9ee;
+            width: 100%;
+            height: 5px;
+            border-radius: 4px;
+            display: block;
+            float: left;
+        }
+
+        .footer-link {
+            color: #4a4a4a;
+            cursor: pointer;
+        }
+
+        .footer-link:hover {
+            color: #662BF3;
+            border-bottom: 1px solid #662BF3;
+
+        }
+
+        .hello {
+            background-color: #ff3860;
+            padding: 0.25rem;
+            display: inline-flex;
+            transform: rotate(-1deg);
+            color: white;
+            font-weight: 500;
+        }
+
+        .css-grad {
+            position: absolute;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            top: 40%;
+            right: 80%;
+            width: 20%;
+            height: 250px;
+            -webkit-filter: blur(80px);
+            filter: blur(80px);
+            background: radial-gradient(circle at 50% 50%, #5f64ff, #444bf700);
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        lottie-player {
+            margin: 0 auto;
+        }
+
+        .inline-svg svg {
+            vertical-align: middle;
+            width: 18px;
+        }
+
+        .blinking {
+            -webkit-animation: 1s blink ease infinite;
+            -moz-animation: 1s blink ease infinite;
+            -ms-animation: 1s blink ease infinite;
+            -o-animation: 1s blink ease infinite;
+            animation: 1s blink ease infinite;
+        }
+
+        .shadow {
+            background-image: linear-gradient(140deg, #2072ff, #662BF3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        @keyframes blink {
+
+            from,
+            to {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes blink {
+
+            from,
+            to {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes blink {
+
+            from,
+            to {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @-ms-keyframes blink {
+
+            from,
+            to {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes blink {
+
+            from,
+            to {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .cookie-message {
+            border-radius: 10px;
+            padding: 15px 0;
+            background: #f7f8fb;
+            border: 1px solid rgba(0, 0, 0, .15);
+            box-shadow: 0 0 16px 2px rgba(0, 0, 0, .05), 0 10px 10px 2px rgba(0, 0, 0, .05);
+            font-size: 12px;
+            line-height: 40px;
+            border-top: 1px solid #e4e4e4;
+            position: fixed;
+            z-index: 1001;
+            bottom: 2%;
+            right: 2.5%;
+            left: 2.5%;
+            margin: auto;
+            max-width: 540px;
+            display: none;
+        }
+
+        .cookie-message img {
+            height: 2.25rem;
+            width: 2.25rem;
+            margin: 0 15px;
+            -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+        }
+
+        .cookie-message span {
+            display: inline-block;
+            line-height: 1.5;
+            padding-right: 16px;
+            border-right: 1px solid rgba(0, 0, 0, .1);
+        }
+
+        .cookie-message span.close {
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            border: none;
+            padding: 0 20px 0 16px;
+            position: relative;
+            -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+            color: #919191;
+            transition: color 0.2s;
+        }
+
+        .cookie-message span.close:hover {
+            color: #18253f;
+        }
+
+        .cookie-message a {
+            display: inline-block;
+            color: #662BF3;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 0, 0, .1);
+        }
+
+        .services {
+            transition: transform 250ms ease-in-out;
+            padding: 2.5rem;
+            -webkit-box-shadow: 0px 30px 40px 0px rgb(3 24 128 / 20%);
+            -moz-box-shadow: 0px 30px 40px 0px rgba(3, 24, 128, 0.2);
+            box-shadow: 0px 30px 40px 0px rgb(3 24 128 / 20%);
+        }
+
+        /*
+        .services:hover {
+            transform: translateY(-5px) translate3d(0, -5px, 0);
+        }
+        */
+        .animated {
+            animation-duration: 4s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translateY(0px) translate3d(0, 0px, 0);
+            }
+
+            50% {
+                transform: translateY(-7.5px) translate3d(0, -7.5px, 0);
+            }
+
+            100% {
+                transform: translateY(0px) translate3d(0, 0px, 0);
+            }
+        }
+
+        .pulse {
+            animation-name: pulse;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto&display=swap"
+        rel="stylesheet">
+    <!-- TrustBox script -->
+    <script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async>
+    </script>
+    <!-- End TrustBox script -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q984H9504P"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q984H9504P');
+    </script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () {
+                (c[a].q = c[a].q || []).push(arguments)
+            };
+            t = l.createElement(r);
+            t.async = 1;
+            t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "9jkdz0oa6l");
+    </script>
+    <script type="text/javascript">
+        (function (d, u, h, s) {
+            h = d.getElementsByTagName('head')[0];
+            s = d.createElement('script');
+            s.async = 1;
+            s.src = u + new Date().getTime();
+            h.appendChild(s);
+        })(document, 'https://grow.clearbitjs.com/api/pixel.js?v=');
+    </script>
+</head>
+
+<body>
+    <div class="unify">
+
+        <div class="container">
+            <section class="hero" style="width: 100%;">
+                <div class="hero-body" style="padding-top: 5rem;">
+                    <h1 class="title" style="font-family: 'Inter', sans-serif;">
+                        <strong class="is-size-1 is-size-4-mobile" style="font-weight: 700;"><span id="greet">Good
+                                Morning 🖐</span> <br> Scroll to start
+                            <span style="color: #662BF3;">CA Quiz</span> now.
+                        </strong>
+                    </h1>
+                </div>
+            </section>
+            <hr>
+
+            <div style="padding-top: 1.5rem;">
+                <div style="width: 100%;">
+                    <h2 class="is-size-2 is-size-4-mobile" style="font-family: 'Inter', sans-serif;font-weight: 800;">
+                        <strong>Here's 1 sample question<span style="color: #662BF3;">?</span></strong></h2>
+                    <hr style="max-width: 5px; background-color: #662BF3;margin-top: 0.1rem;height: 25px;">
+                    <input type="checkbox" id="a1" name="game" value="1" onclick="myFun(this)">
+                    <label class="is-size-5" for="a1"> True answer</label><br>
+                    <input type="checkbox" id="a2" name="game" value="0" onclick="myFun(this)">
+                    <label class="is-size-5" for="a2"> False answer</label><br>
+                    <input type="checkbox" id="a3" name="game" value="0" onclick="myFun(this)">
+                    <label class="is-size-5" for="a3"> False answer</label>
+                </div>
+                <div style="width: 100%;padding-top: 2.5rem;padding-bottom: 2.5rem;">
+                    <h2 class="is-size-2 is-size-4-mobile" style="font-family: 'Inter', sans-serif;font-weight: 800;">
+                        <strong>Here's 2 sample question<span style="color: #662BF3;">?</span></strong></h2>
+                    <hr style="max-width: 5px; background-color: #662BF3;margin-top: 0.1rem;height: 25px;">
+                    <input type="checkbox" id="aa1" name="game2" value="1" onclick="myFun1(this)">
+                    <label class="is-size-5" for="aa1"> True answer</label><br>
+                    <input type="checkbox" id="aa2" name="game2" value="0" onclick="myFun1(this)">
+                    <label class="is-size-5" for="aa2"> False answer</label><br>
+                    <input type="checkbox" id="aa3" name="game2" value="0" onclick="myFun1(this)">
+                    <label class="is-size-5" for="aa3"> False answer</label>
+                </div>
+                <button class="button is-primary is-fullwidth" onclick="myFunction()">Check Score</button>
+                <div style="visibility: hidden;" id="resblock">
+                    <p class="is-size-5" style="font-family: 'Inter', sans-serif; padding: 0.75rem;text-align: center;"> <strong class="title" style="font-weight: 700; ">Here's your score
+                    </strong></p>
+                    <p class="is-size-5" style="font-family: 'Inter', sans-serif; padding: 0.75rem;text-align: center;">
+                      <strong class="hello" style="font-weight: 700; "><span id="res">2</span>/2
+                      </strong>
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div>
+            <div class="cookie-message" id="cookie_popup">
+                <img src="./static/img/cookie.svg" alt="cookie" style="padding: 0.25rem;">
+                <span>We use cookies to ensure that we give you the best experience on our website. <a
+                        href="https://www.growthfyi.com/privacy-policy" target="_blank" rel="nooppener">Privacy
+                        Policy</a></span>
+                <span class="close" style="cursor: pointer;" onclick="privacy_popup_close()"><svg class="crossSVG"
+                        viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink" style="height: 0.75rem;">
+                        <g id="lander" stroke="none" stroke-width="1" fill="#fcfcfc" fill-rule="evenodd">
+                            <g id="with-content" transform="translate(-908.000000, -130.000000)" fill="currentColor"
+                                fill-rule="nonzero">
+                                <g id="close" transform="translate(907.000000, 132.000000)">
+                                    <path
+                                        d="M10.7483549,6.66674232 L17.0401562,0.374941027 C17.431059,-0.0156282754 17.431059,-0.649344479 17.0401562,-1.03991378 C16.6492534,-1.43081662 16.0162042,-1.43081662 15.6253014,-1.03991378 L9.3335001,5.25188752 L3.04136527,-1.03991378 C2.65046243,-1.43081662 2.0174133,-1.43081662 1.62651046,-1.03991378 C1.23560762,-0.649344479 1.23560762,-0.0156282754 1.62651046,0.374941027 L7.91864529,6.66674232 L1.62651046,12.9585436 C1.23560762,13.3491129 1.23560762,13.9828291 1.62651046,14.3733984 C1.82196188,14.5685163 2.07811664,14.666242 2.33393787,14.666242 C2.58975909,14.666242 2.84591385,14.5685163 3.04136527,14.3730649 L9.3335001,8.0812636 L15.6253014,14.3730649 C15.8207528,14.5685163 16.0769076,14.666242 16.3327288,14.666242 C16.58855,14.666242 16.8447048,14.5685163 17.0401562,14.3730649 C17.431059,13.9824956 17.431059,13.3487794 17.0401562,12.9582101 L10.7483549,6.66674232 Z"
+                                        id="Path"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="dm-short-menu">
+        <div class="circle">
+            <svg class="dm-short-menu-logo" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#18253f"></circle>
+                <path
+                    d="M13.1752 17.1V13.62H15.0352C15.7419 13.62 16.2686 13.4333 16.6152 13.06C16.9619 12.6733 17.1352 12.2067 17.1352 11.66C17.1352 11.0867 16.9619 10.62 16.6152 10.26C16.2819 9.9 15.8152 9.72 15.2152 9.72C14.5752 9.72 14.0819 9.91333 13.7352 10.3C13.3886 10.6867 13.2152 11.1533 13.2152 11.7H10.1552C10.1552 10.82 10.3552 10.0267 10.7552 9.32C11.1552 8.6 11.7352 8.02667 12.4952 7.6C13.2686 7.17333 14.2019 6.96 15.2952 6.96C16.3086 6.96 17.1819 7.15333 17.9152 7.54C18.6486 7.91333 19.2152 8.43333 19.6152 9.1C20.0152 9.76667 20.2152 10.5333 20.2152 11.4V11.64C20.2152 12.7333 19.8819 13.6533 19.2152 14.4C18.5486 15.1467 17.6019 15.6333 16.3752 15.86L16.3552 17.1H13.1752ZM12.9352 22V18.78H16.5752V22H12.9352Z"
+                    fill="white"></path>
+            </svg>
+            <svg class="dm-loading" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="15" cy="15" r="15" fill="#18253f"></circle>
+                <path
+                    d="M13.1752 17.1V13.62H15.0352C15.7419 13.62 16.2686 13.4333 16.6152 13.06C16.9619 12.6733 17.1352 12.2067 17.1352 11.66C17.1352 11.0867 16.9619 10.62 16.6152 10.26C16.2819 9.9 15.8152 9.72 15.2152 9.72C14.5752 9.72 14.0819 9.91333 13.7352 10.3C13.3886 10.6867 13.2152 11.1533 13.2152 11.7H10.1552C10.1552 10.82 10.3552 10.0267 10.7552 9.32C11.1552 8.6 11.7352 8.02667 12.4952 7.6C13.2686 7.17333 14.2019 6.96 15.2952 6.96C16.3086 6.96 17.1819 7.15333 17.9152 7.54C18.6486 7.91333 19.2152 8.43333 19.6152 9.1C20.0152 9.76667 20.2152 10.5333 20.2152 11.4V11.64C20.2152 12.7333 19.8819 13.6533 19.2152 14.4C18.5486 15.1467 17.6019 15.6333 16.3752 15.86L16.3552 17.1H13.1752ZM12.9352 22V18.78H16.5752V22H12.9352Z"
+                    fill="white"></path>
+            </svg>
+        </div>
+        <div class="dm-short-menu-window">
+            <span class="nobr">Hey there 👋,
+                <br>
+                JOJO</span> from <b>JJ EDU</b> here to help you out!
+            <div class="link-box">
+                <a href="mailto:hi@growthfyi.com" class="dm-short-menu-link" target="_blank">Send us an Email</a>
+                <a href="https://twitter.com/Growthfyi" class="dm-short-menu-link" target="_blank">Follow on Twitter</a>
+                <a href="https://feedback.growthfyi.com" class="dm-short-menu-link" target="_blank">Share Feedback</a>
+            </div>
+        </div>
+        <span class="dm-short-menu-badge"></span>
+    </div>
+
+    <footer style="padding-top: 2.5rem;">
+        <div class="unify">
+            <div class="border"></div>
+            <br>
+            <div class="has-text-centered" style="padding-top: 0.25rem;padding-bottom: 3rem; font-size: 0.875rem;">
+                <div>
+                    © <span id="copy">2021</span> JJ EDU
+                </div>
+            </div>
+    </footer>
+    <script src="./static/main.js"></script>
+    <script>
+        console.log('%c🖐 %cWelcome to Growthfyi', 'font-size: 28px;', 'font-size: 28px;font-weight: bold;');
+        //Autofoucus to form
+        var sw = screen.width;
+        if (sw > 768) {
+            document.getElementById("genfrm").focus();
+        } else {
+            document.getElementById("mobfrm").focus();
+        }
+        //Copyright
+        var yrr = new Date().getFullYear();
+        document.getElementById("copy").innerHTML = yrr;
+        /*
+        const d = new Date();
+        let day = d.getDate() + 1;
+        document.getElementById("users").innerHTML = day;
+        */
+
+        //Form button text
+        function disbtn() {
+            document.getElementById("submit_btn").disabled = true;
+            document.getElementById("submit_btn_mob").disabled = true;
+            document.getElementById("submit_btn2").disabled = true;
+            document.getElementById("submit_btn_mob2").disabled = true;
+        }
+
+        function privacy_popup_close() {
+            document.getElementById("cookie_popup").style.display = "none";
+
+            if (window.localStorage) {
+                // Store the expiration date of the current popup in localStorage.
+                var expires = new Date();
+                expires = expires.setHours(expires.getHours() + 1800);
+                localStorage.setItem('nextPrivacy', expires);
+            }
+        }
+        window.setTimeout(function () {
+            // First check, if localStorage is supported.
+            if (window.localStorage) {
+                // Get the expiration date of the previous popup.
+                var nextPopup = localStorage.getItem('nextPrivacy');
+
+                if (nextPopup > new Date()) {
+                    return;
+                }
+            }
+            document.getElementById("cookie_popup").style.display = "flex";
+        }, 0);
+    </script>
+    <script src="https://unpkg.com/@formspark/formtrack@0.1.29/dist/index.js" async></script>
+    <script>
+        function text(url) {
+            return fetch(url).then(res => res.text());
+        }
+
+        text('https://www.cloudflare.com/cdn-cgi/trace').then(data => {
+            let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/
+            let ip = data.match(ipRegex)[0];
+            
+            document.getElementById("ip3").value = ip;
+            document.getElementById("ip4").value = ip;
+        });
+
+        //Greet visitors on landing page as well as console log
+        var hour = new Date().getHours();
+        var timeOfDay = hour < 12 && 'Good Morning 🖐' || hour < 18 && 'Good Afternoon 🖐' || 'Good Evening 🖐';
+        document.getElementById("greet").innerHTML = timeOfDay;
+        console.log(timeOfDay + " Human 🖐, hope you are enjoying your day.")
+    </script>
+    <script>
+        function myFun(checkbox) {
+            var checkboxes = document.getElementsByName('game')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false
+            })
+        }
+
+        function myFun1(checkbox) {
+            var checkboxes = document.getElementsByName('game2')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false
+            })
+        }
+
+        function myFunction() {
+            var checkBox1 = document.getElementById("a1");
+            var checkBox2 = document.getElementById("aa1");
+            var ans = 0;
+            var text = document.getElementById("text");
+            if (checkBox1.checked == true) {
+                var ans = ans + 1;
+            }
+            if (checkBox2.checked == true) {
+                var ans = ans + 1;
+            }
+            document.getElementById("res").innerHTML= ans;
+            document.getElementById("resblock").style.visibility= "visible";
+            console.log(ans);
+        }
+
+    </script>
+</body>
+
+</html>
